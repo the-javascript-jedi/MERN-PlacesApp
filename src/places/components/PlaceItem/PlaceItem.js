@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Card from "../../../shared/components/UIElements/Card/Card";
 import Button from "../../../shared/components/FormElements/Button/Button";
 import Modal from "../../../shared/components/UIElements/Modal/Modal";
+import Map from "../../../shared/components/UIElements/Map/Map";
 import "./PlaceItem.css";
 const PlaceItem = (props) => {
   const [showMap, setShowMap] = useState(false);
@@ -18,7 +19,8 @@ const PlaceItem = (props) => {
         footer={<Button onClick={closeMapHandler}>CLOSE</Button>}
       >
         <div className='map-container'>
-          <h2>THE MAP!!</h2>
+          {/* props.coordinates must always be an object with lat:lng passed as key location:{lat:111,lng:111} */}
+          <Map center={props.coordinates} zoom={16} />
         </div>
       </Modal>
       <li className='place-item'>
@@ -43,5 +45,4 @@ const PlaceItem = (props) => {
     </React.Fragment>
   );
 };
-
 export default PlaceItem;

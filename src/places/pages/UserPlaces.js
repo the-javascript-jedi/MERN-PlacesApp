@@ -9,7 +9,7 @@ const DUMMY_PLACES = [
     description: "One of the most famous skyscrapers in the world!",
     imageUrl:
       "https://pbs.twimg.com/profile_images/1272532349151072262/kBEZiWIQ.jpg",
-    addres: "20 W 34th St, New York, NY 10001, United States",
+    address: "20 W 34th St, New York, NY 10001, United States",
     location: {
       lat: 40.7484405,
       lng: -73.9878531,
@@ -22,7 +22,7 @@ const DUMMY_PLACES = [
     description: "One of the most famous skyscrapers in the world!",
     imageUrl:
       "https://pbs.twimg.com/profile_images/1272532349151072262/kBEZiWIQ.jpg",
-    addres: "20 W 34th St, New York, NY 10001, United States",
+    address: "20 W 34th St, New York, NY 10001, United States",
     location: {
       lat: 40.7484405,
       lng: -73.9878531,
