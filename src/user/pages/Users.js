@@ -1,27 +1,19 @@
-import React from "react";
-import UsersList from "../components/UsersList/UsersList";
+import React from 'react';
+
+import UsersList from '../components/UsersList';
+
 const Users = () => {
   const USERS = [
     {
-      id: "u1",
-      name: "Max",
+      id: 'u1',
+      name: 'Max Schwarz',
       image:
-        "https://cdn3.iconfinder.com/data/icons/avatars-round-flat/33/avat-01-512.png",
-      places: 3,
-    },
-    {
-      id: "u2",
-      name: "Nithin",
-      image:
-        "https://www.kindpng.com/picc/m/78-786207_user-avatar-png-user-avatar-icon-png-transparent.png",
-      places: 3,
-    },
+        'https://images.pexels.com/photos/839011/pexels-photo-839011.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+      places: 3
+    }
   ];
-  return (
-    <div>
-      <UsersList items={USERS} />
-    </div>
-  );
+
+  return <UsersList items={USERS} />;
 };
 
 export default Users;
