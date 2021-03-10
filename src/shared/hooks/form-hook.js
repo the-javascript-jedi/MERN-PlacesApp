@@ -19,6 +19,12 @@ const formReducer = (state, action) => {
         },
         isValid: formIsValid,
       };
+    case "SET_DATA":
+      // replace the state entirely so don't spread the object
+      return {
+        inputs: action.inputs,
+        isValid: action.formIsValid,
+      };
     default:
       return state;
   }
@@ -37,6 +43,17 @@ export const useForm = (initialInputs, initialFormValidity) => {
       inputId: id,
     });
   }, []);
+  // functionality to update formstate when we receive the form data from a db(currently simulated)
+  const setFormData = useCallback((inputData, formValidity) => {
+    // we dispatch this action to the reducer
+    //inputs,formIsValid are accessed using action.inputs and action.formIsValid
+    //SET_DATA is accessed using action.SET_DATA
+    dispatch({
+      type: "SET_DATA",
+      inputs: inputData,
+      formIsValid: formValidity,
+    });
+  }, []);
   // retrun
-  return [formState, inputHandler];
+  return [formState, inputHandler, setFormData];
 };
