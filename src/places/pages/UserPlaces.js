@@ -19,14 +19,15 @@ export const DUMMY_PLACES = [
   },
   {
     id: "p2",
-    title: "Empire State Building",
-    description: "One of the most famous sky scrapers in the world!",
+    title: "Eltz Castle",
+    description: "Castle in Germany!",
     imageUrl:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/NYC_Empire_State_Building.jpg/640px-NYC_Empire_State_Building.jpg",
-    address: "20 W 34th St, New York, NY 10001",
+      "https://i.pinimg.com/originals/cc/53/bf/cc53bfe1b7c2df79f530632bf2a5002a.jpg",
+    address: "56294 Wierschem, Germany",
     location: {
-      lat: 40.7484405,
-      lng: -73.9878584,
+      // 26.0961648,6.5617745
+      lat: 50.2052,
+      lng: 7.3365,
     },
     creator: "u2",
   },

@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { DUMMY_PLACES } from "./UserPlaces";
 import Input from "../../shared/components/FormElements/Input";
 import Button from "../../shared/components/FormElements/Button";
+import Card from "../../shared/components/UIElements/Card";
 import "./PlaceForm.css";
 // import the custom hook
 import { useForm } from "../../shared/hooks/form-hook";
@@ -37,19 +38,23 @@ const UpdatePlace = () => {
   // if we call setFormData directly we dispatch an action to the inputHandler in useForm hook and that will ruun the reducer an produce a new state component will re-render and will have an infinite loop, so we must use the useEffect hook in our function
   useEffect(() => {
     console.log("identifiedPlace", identifiedPlace);
-    setFormData(
-      {
-        title: {
-          value: identifiedPlace.title,
-          isValid: true,
+    // if identifiedPlace is present
+    if (identifiedPlace) {
+      setFormData(
+        {
+          title: {
+            value: identifiedPlace.title,
+            isValid: true,
+          },
+          description: {
+            value: identifiedPlace.description,
+            isValid: true,
+          },
         },
-        description: {
-          value: identifiedPlace.description,
-          isValid: true,
-        },
-      },
-      true
-    );
+        true
+      );
+    }
+
     // setIsLoading flag to update the form
     setIsLoading(false);
     //dependency identifiedPlace will not change because due to same URL data will always be the same
@@ -63,9 +68,9 @@ const UpdatePlace = () => {
   // return error message if no form element is present
   if (!identifiedPlace) {
     return (
-      <div className='center'>
+      <Card>
         <h2>Could Not find Place!</h2>
-      </div>
+      </Card>
     );
   }
   //currently initial values are being loaded so we make a check and render form if formState.inputs.title.value has any value
